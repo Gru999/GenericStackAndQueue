@@ -18,7 +18,8 @@ namespace GenericStackAndQueue
             throw new NotImplementedException();
         }
 
-        public void Push(Task element)
+        //Action with T element as input
+        public void Push(T element)
         {
             throw new NotImplementedException();
         }

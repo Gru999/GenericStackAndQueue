@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace GenericStackAndQueue
 {
     public interface IMyStack<T> {
-        void Push(Task element);
+        void Push(T element);
         T Pop();
         T Peek();
     }

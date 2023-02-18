@@ -4,24 +4,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GenericStackAndQueue
-{
-    internal class MyStackLinkedList<T> : IMyStack<T>
-    {
-        public T Peek()
-        {
-            throw new NotImplementedException();
+namespace GenericStackAndQueue {
+    public class MyStackLinkedList<T> : IMyStack<T> {
+
+        private LinkedList<T> list;
+        public int ListSize { get; set; }
+
+        public MyStackLinkedList(int listSize) {
+            ListSize = listSize;
+            list = new LinkedList<T>();
         }
 
-        public T Pop()
-        {
-            throw new NotImplementedException();
+
+        //Action with T element as input - needs to check if the linkedlist is at max capacity
+        public void Push(T element) {
+            if (list.Count.Equals(0)) {
+                throw new NotImplementedException();
+            }
+            list.AddLast(element);
         }
 
-        //Action with T element as input
-        public void Push(T element)
-        {
-            throw new NotImplementedException();
+        public T Pop() {
+            if (list.Count.Equals(0)) {
+                throw new NotImplementedException();
+            }
+            T lastNodeElement = list.Last.Value;
+            list.Remove(lastNodeElement);
+            return lastNodeElement;
+        }
+
+        public T Peek() { 
+            if (list.Count.Equals(0)) {
+                throw new NotImplementedException();
+            }
+            return list.Last.Value;
         }
     }
 }

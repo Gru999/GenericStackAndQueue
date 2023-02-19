@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace GenericStackAndQueue
 {
-    public class MyStackIsEmptyException
-    {
+    public class MyStackIsEmptyException : Exception {
+        public MyStackIsEmptyException(String message) : base(message) {
+        }
     }
 }

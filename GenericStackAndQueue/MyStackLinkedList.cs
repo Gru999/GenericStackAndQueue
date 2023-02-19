@@ -18,15 +18,15 @@ namespace GenericStackAndQueue {
 
         //Action with T element as input - needs to check if the linkedlist is at max capacity
         public void Push(T element) {
-            if (list.Count.Equals(0)) {
-                throw new NotImplementedException();
+            if (list.Count.Equals(ListSize)) {
+                throw new MyStackIsFullException("The stack if full");
             }
             list.AddLast(element);
         }
 
         public T Pop() {
             if (list.Count.Equals(0)) {
-                throw new NotImplementedException();
+                throw new MyStackIsEmptyException("The stack is empty");
             }
             T lastNodeElement = list.Last.Value;
             list.Remove(lastNodeElement);
@@ -35,7 +35,7 @@ namespace GenericStackAndQueue {
 
         public T Peek() { 
             if (list.Count.Equals(0)) {
-                throw new NotImplementedException();
+                throw new MyStackIsEmptyException("The stack is empty");
             }
             return list.Last.Value;
         }

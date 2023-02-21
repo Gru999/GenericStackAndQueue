@@ -22,7 +22,6 @@ namespace GenericStackAndQueue {
                 throw new MyQueueIsFullException("Queue is full");
             }
             array[_bottomOfArray++] = item;
-            _bottomOfArray = 0;
             _count++;
         }
 
@@ -31,7 +30,6 @@ namespace GenericStackAndQueue {
                 throw new MyQueueIsEmptyException("Queue is empty");
             }
             T topQueueItem = array[_topOfArray++];
-            _topOfArray = 0;
             _count--;
             return topQueueItem;
         }

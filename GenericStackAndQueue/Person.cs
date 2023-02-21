@@ -24,7 +24,7 @@ namespace GenericStackAndQueue
 
         public override string ToString() {
 
-            return $"Id: {Id}, Name: {Name}, Age: {Age}";
+            return $"Id: {Id}, Name: {Name}, Age: {Age} ";
         }
     }
 }

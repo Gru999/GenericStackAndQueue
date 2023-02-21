@@ -57,8 +57,8 @@ catch (MyStackIsEmptyException eex) {
 Console.WriteLine("\n-----Beginning of Queue-----\n\n");
 
 
-MyQueueLinkedList<Person> queueCollection = new MyQueueLinkedList<Person>(7);
-//MyQueueArray<Person> queueCollection = new MyQueueArray<Person>(7);
+//MyQueueLinkedList<Person> queueCollection = new MyQueueLinkedList<Person>(7);
+MyQueueArray<Person> queueCollection = new MyQueueArray<Person>(7);
 
 
 //Enqueue method
@@ -83,10 +83,17 @@ catch (MyQueueIsFullException fex) {
 //Dequeue method
 Console.WriteLine("---Dequeue Method---\n");
 try {
-    for (int i = 0; i < 8; i++)
-    {
-        Console.WriteLine($"This item was removed from the Queue: {queueCollection.Dequeue()}\n");
-    }
+    //for (int i = 0; i < 8; i++) {
+    //    Console.WriteLine($"This item was removed from the Queue: {queueCollection.Dequeue()}\n");
+    //}
+    Console.WriteLine("Dequeue 1: " + queueCollection.Dequeue());
+    Console.WriteLine("Dequeue 2: " + queueCollection.Dequeue());
+    Console.WriteLine("Dequeue 3: " + queueCollection.Dequeue());
+    Console.WriteLine("Dequeue 4: " + queueCollection.Dequeue());
+    Console.WriteLine("Dequeue 5: " + queueCollection.Dequeue());
+    Console.WriteLine("Dequeue 6: " + queueCollection.Dequeue());
+    Console.WriteLine("Dequeue 7: " + queueCollection.Dequeue());
+    Console.WriteLine("Dequeue 8: " + queueCollection.Dequeue());
 }
 catch (MyQueueIsEmptyException eex) {
     Console.WriteLine(eex + "\n");

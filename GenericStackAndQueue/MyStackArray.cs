@@ -9,7 +9,7 @@ namespace GenericStackAndQueue {
     {
         private T[] array;
         public int ArraySize { get; set; }
-        private int topOfArray = 0;
+        private int _topOfArray = 0;
 
         public MyStackArray(int arraySize) {
             ArraySize = arraySize;
@@ -17,24 +17,24 @@ namespace GenericStackAndQueue {
         }
 
         public void Push(T element) {
-            if (topOfArray.Equals(ArraySize)) {
+            if (_topOfArray.Equals(ArraySize)) {
                 throw new MyStackIsFullException("The stack if full");
             }
-            array[topOfArray++] = element;
+            array[_topOfArray++] = element;
         }
 
         public T Pop() {
-            if (topOfArray.Equals(0)) {
+            if (_topOfArray.Equals(0)) {
                 throw new MyStackIsEmptyException("The stack is empty");
             }
-            return array[topOfArray--];
+            return array[_topOfArray--];
         }
 
         public T Peek() {
-            if (topOfArray.Equals(0)) {
+            if (_topOfArray.Equals(0)) {
                 throw new MyStackIsEmptyException("The stack is empty");
             }
-            return array[--topOfArray];
+            return array[--_topOfArray];
         }
     }
 }

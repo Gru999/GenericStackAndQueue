@@ -57,8 +57,8 @@ catch (MyStackIsEmptyException eex) {
 Console.WriteLine("\n-----Beginning of Queue-----\n\n");
 
 
-//MyQueueLinkedList<Person> queueCollection = new MyQueueLinkedList<Person>(7);
-MyQueueArray<Person> queueCollection = new MyQueueArray<Person>(7);
+MyQueueLinkedList<Person> queueCollection = new MyQueueLinkedList<Person>(7);
+//MyQueueArray<Person> queueCollection = new MyQueueArray<Person>(7);
 
 
 //Enqueue method

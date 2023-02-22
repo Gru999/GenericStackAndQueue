@@ -23,6 +23,7 @@ namespace GenericStackAndQueue {
             }
             array[_bottomOfArray++] = item;
             _count++;
+            _bottomOfArray %= array.Length;
         }
 
         public T Dequeue() {
@@ -31,6 +32,7 @@ namespace GenericStackAndQueue {
             }
             T topQueueItem = array[_topOfArray++];
             _count--;
+            _topOfArray %= array.Length;
             return topQueueItem;
         }
     }
